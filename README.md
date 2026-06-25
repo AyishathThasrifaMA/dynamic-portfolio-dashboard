@@ -54,36 +54,6 @@ npm run build
 npm start
 ```
 
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── api/
-│   │   └── portfolio/
-│   │       ├── route.ts          # Full portfolio API (Yahoo + Google)
-│   │       └── live/route.ts     # Live CMP refresh (Yahoo only)
-│   ├── layout.tsx
-│   ├── page.tsx
-│   └── globals.css
-├── components/
-│   ├── PortfolioDashboard.tsx    # Main client dashboard
-│   ├── PortfolioTable.tsx        # Sortable table + 15s refresh
-│   ├── SectorSummary.tsx         # Sector summary cards
-│   └── PortfolioCharts.tsx       # Recharts visualizations
-├── data/
-│   └── initialHoldings.json      # Static portfolio from Excel sheet
-├── lib/
-│   ├── yahooFinance.ts           # Yahoo Finance quote fetcher
-│   ├── googleFinance.ts          # Google Finance scraper
-│   ├── portfolioService.ts       # Portfolio aggregation logic
-│   ├── portfolioUtils.ts         # Sector/total calculations
-│   ├── symbols.ts                # NSE/BSE symbol mapping
-│   ├── cache.ts                  # In-memory TTL cache
-│   └── formatters.ts             # Currency/number formatting
-└── types/
-    └── portfolio.ts              # TypeScript interfaces
-```
 
 ## API Endpoints
 
@@ -112,45 +82,6 @@ https://www.google.com/finance/quote/532174:BOM
 ```
 If Google data is unavailable, Yahoo's `trailingPE` and `epsTrailingTwelveMonths` are used as fallback.
 
-## Case Study Requirements Checklist
-
-| Requirement | Status |
-|-------------|--------|
-| Next.js + React frontend | ✅ |
-| Node.js backend (API routes) | ✅ |
-| TypeScript | ✅ |
-| Tailwind CSS | ✅ |
-| Yahoo Finance for CMP | ✅ |
-| Google Finance for P/E & Earnings | ✅ |
-| JSON data format | ✅ |
-| All portfolio table columns | ✅ |
-| 15-second dynamic updates | ✅ |
-| Green/red Gain/Loss indicators | ✅ |
-| Sector grouping with summaries | ✅ |
-| react-table (@tanstack) | ✅ |
-| Recharts visualizations | ✅ |
-| Caching & throttling | ✅ |
-| React.memo memoization | ✅ |
-| Error handling | ✅ |
-| Responsive layout | ✅ |
-| No client-side API secrets | ✅ |
-
-## Configuration
-
-Portfolio holdings are defined in `src/data/initialHoldings.json`. Edit this file to add or modify stocks:
-
-```json
-{
-  "no": 1,
-  "name": "HDFC Bank",
-  "purchasePrice": 1490,
-  "qty": 50,
-  "code": "HDFCBANK",
-  "sector": "Financial"
-}
-```
-
-- Use **NSE symbol** (e.g., `HDFCBANK`) or **BSE numeric code** (e.g., `532174`) in the `code` field.
 
 ## Troubleshooting
 
