@@ -117,17 +117,6 @@ Yahoo Finance      Google Finance
 | `recharts` | Sector allocation pie chart and gain/loss bar chart |
 | `lucide-react` | Icons for loading, error, and section headers |
 
-## Possible Improvements
-
-- **WebSocket** for push-based updates instead of polling
-- **Redis cache** for multi-instance deployment
-- **Background job** to pre-warm Google Finance cache
-- **Database** for portfolio CRUD instead of static JSON
-- **Unit tests** for symbol mapping and calculation logic
-
-## Interview Talking Points
-
-When explaining this project in an interview, focus on:
 
 1. **Why unofficial APIs?** — No official APIs exist; document the trade-offs
 2. **Caching strategy** — Different TTLs for price (volatile) vs fundamentals (stable)
