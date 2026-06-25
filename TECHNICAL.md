@@ -107,19 +107,4 @@ Yahoo Finance      Google Finance
 - No sensitive data in client-side JavaScript bundles
 - `dynamic = "force-dynamic"` on API routes to prevent stale cached responses
 
-## Libraries Used
 
-| Library | Purpose |
-|---------|---------|
-| `@tanstack/react-table` | Sortable, headless portfolio table |
-| `axios` | HTTP requests to Yahoo/Google |
-| `cheerio` | Server-side HTML parsing for Google Finance |
-| `recharts` | Sector allocation pie chart and gain/loss bar chart |
-| `lucide-react` | Icons for loading, error, and section headers |
-
-
-1. **Why unofficial APIs?** — No official APIs exist; document the trade-offs
-2. **Caching strategy** — Different TTLs for price (volatile) vs fundamentals (stable)
-3. **Separation of concerns** — `lib/` for data fetching, `components/` for UI, `api/` for HTTP layer
-4. **Error resilience** — Graceful degradation with fallbacks and user-visible warnings
-5. **Rate limit awareness** — Throttling, batching, and not re-fetching Google on every tick
